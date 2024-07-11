@@ -20,7 +20,7 @@ function matchCards(img1, img2) {
     matched++;
     if (matched == 8) {
       setTimeout(() => {
-        return shuffleCard();
+        showWinMessage();
       }, 1000);
     }
     cardOne.removeEventListener('click', flipCard);
@@ -57,3 +57,8 @@ shuffleCard();
 cards.forEach((card) => {
   card.addEventListener('click', flipCard);
 });
+
+function showWinMessage() {
+  document.querySelector('.wrapper').style.display = 'none';
+  document.getElementById('win-message').style.display = 'block';
+}
