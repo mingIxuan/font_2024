@@ -6,8 +6,7 @@ let score = 0;
 
 document.querySelector(".score").textContent = score;
 
-
-fetch("https://url-del-api")
+fetch ("./data_memotest/cards.json")
   .then((res) => res.json())
   .then((data) => {
     cards = [...data, ...data];
@@ -33,12 +32,8 @@ function generateCards() {
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
     cardElement.setAttribute("data-name", card.name);
-    cardElement.innerHTML = `
-      <div class="front">
-        <img class="front-image" src=${card.image} />
-      </div>
-      <div class="back"></div>
-    `;
+    ccardElement.innerHTML = `<div class="front"> <img class="front-image" src="${card.image}" /> </div> <div class="back"></div> `;
+    ;
     gridContainer.appendChild(cardElement);
     cardElement.addEventListener("click", flipCard);
   }
@@ -98,4 +93,3 @@ function restart() {
   gridContainer.innerHTML = "";
   generateCards();
 }
-
