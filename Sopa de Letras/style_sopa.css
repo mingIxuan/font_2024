@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: CBDEE7;
+    }
+
+#word-search {
+    display: grid;
+    grid-template-columns: repeat(15, 2em);
+    grid-template-rows: repeat(15, 2em);
+    gap: 0.1em;
+}
+
+#word-search div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    width: 2em;
+    height: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+}

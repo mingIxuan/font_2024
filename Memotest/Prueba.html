@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #word-search {
+            display: grid;
+            grid-template-columns: repeat(15, 30px);
+            grid-template-rows: repeat(15, 30px);
+            gap: 2px;
+        }
+        #word-search div {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+            font-size: 20px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        #word-search div.selected {
+            background-color: yellow;
+        }
+    </style>
+    <title>Word Search</title>
+</head>
+<body>
+    <div id="word-search"></div>
+    <script>
+        const words = ["manzana", "banana", "pera", "uva", "naranja"];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const wordSearchElement = document.getElementById('word-search');
+            const gridSize = 15;
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+            const grid = Array(gridSize).fill().map(() => Array(gridSize).fill(''));
+
+            words.forEach(word => {
+                let placed = false;
+                while (!placed) {
+                    const direction = Math.floor(Math.random() * 2); 
+                    const startX = Math.floor(Math.random() * (gridSize - (direction === 0 ? word.length : 0)));
+                    const startY = Math.floor(Math.random() * (gridSize - (direction === 1 ? word.length : 0)));
+
+                    if (canPlaceWord(word, startX, startY, direction)) {
+                        placeWord(word, startX, startY, direction);
+                        placed = true;
+                    }
+                }
+            });
+
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    if (grid[i][j] === '') {
+                        grid[i][j] = letters[Math.floor(Math.random() * letters.length)];
+                    }
+                }
+            }
+
+            grid.forEach(row => {
+                row.forEach(cell => {
+                    const cellElement = document.createElement('div');
+                    cellElement.textContent = cell;
+                    cellElement.addEventListener('click', () => {
+                        cellElement.classList.toggle('selected');
+                    });
+                    wordSearchElement.appendChild(cellElement);
+                });
+            });
+
+            function canPlaceWord(word, x, y, direction) {
+                for (let i = 0; i < word.length; i++) {
+                    const newX = x + (direction === 0 ? i : 0);
+                    const newY = y + (direction === 1 ? i : 0);
+                    if (newX >= gridSize || newY >= gridSize || (grid[newX][newY] !== '' && grid[newX][newY] !== word[i])) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function placeWord(word, x, y, direction) {
+                for (let i = 0; i < word.length; i++) {
+                    const newX = x + (direction === 0 ? i : 0);
+                    const newY = y + (direction === 1 ? i : 0);
+                    grid[newX][newY] = word[i];
+                }
+            }
+        });
+    </script>
+</body>
+</html>
