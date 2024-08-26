@@ -1,35 +1,31 @@
 body{
-    background-color: gray;
+    background-color: #cbdee7;
+    font-family: "Inter", sans-serif;
   }
   
   #wordSearchContainer {
       display: grid;
-      grid-template-columns: repeat(10, 1fr); /* Ajusta según el tamaño deseado */
+      grid-template-columns: repeat(10, 1fr);
       gap: 5px;
-      max-width: 500px; /* Ajusta según el tamaño deseado */
+      max-width: 500px; 
       margin: 0 auto;
   }
   
   #wordSearchContainer div {
-      width: 50px; /* Ajusta según el tamaño deseado */
-      height: 50px; /* Ajusta según el tamaño deseado */
+      width: 50px; 
+      height: 50px; 
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f0f0f0;
+      background-color: #52a55b;
       cursor: pointer;
   }
   
   #wordSearchContainer div.selected {
-      background-color: #add8e6;
-  }
-  .selected {
-      background-color: #90ee90; /* Un verde claro para las letras seleccionadas */
+      color: #FF439D;
   }
   
-  .found {
-      background-color: #ffcccb; /* Un rojo claro para las palabras encontradas */
-  }
+
   .wordsList {
       margin: 20px auto;
       max-width: 90vw;
@@ -37,7 +33,7 @@ body{
       background-color: #f7f7f7;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
+      display: block;
       flex-wrap: wrap;
       justify-content: center;
   }
@@ -52,12 +48,21 @@ body{
   }
   
   .wordsList div.found::after {
-      content: ' ✔️'; /* Añade una palomita después del texto */
-      color: green; /* Color verde para la palomita */
+      color: #6286B0; 
   }
   
-  /* Opcionalmente, puedes ajustar el estilo de la palabra encontrada para diferenciarla aún más */
   .wordsList div.found {
-      background-color: #90ee90; /* Verde claro para indicar que la palabra ha sido encontrada */
-      text-decoration: none; /* Remueve el line-through si prefieres no tachar la palabra */
+      background-color: #6286B0; 
+      text-decoration: line-through;
   }
+
+  h1{
+    font-family: 'Potta One', sans-serif; 
+    color: #6286B0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 300%;
+    margin-top: -1%;
+    margin-bottom: -1%;
+}
