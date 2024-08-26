@@ -1,0 +1,38 @@
+body{
+    background-color: #CBDEE7;
+}
+
+.esquina-izquierda {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 15%;
+    margin: 15px;
+}
+
+.esquina-derecha{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 15%;
+    margin: 20px;
+}
+
+.btn {
+    margin-top: 10%;
+    display: block;
+    cursor: pointer;
+    background-repeat: no-repeat;
+	background-position: center;
+    background-size: contain;
+    width: 300px;
+    height: 80px;
+    border: none;
+    border-radius: 40px 40px;
+}
+
+.botones {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
