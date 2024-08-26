@@ -43,11 +43,12 @@ function shuffleCard() {
   matched = 0;
   disableDeck = false;
   cardOne = cardTwo = '';
-  let arr = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9];
+  let arr = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
   arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
   cards.forEach((card, i) => {
     card.classList.remove('flip');
     let imgTag = card.querySelector('.back-view img');
+    //link aca?
     imgTag.src = `images/F${arr[i]}.png`;
     card.addEventListener('click', flipCard);
   });
@@ -62,3 +63,15 @@ function showWinMessage() {
   document.querySelector('.wrapper').style.display = 'none';
   document.getElementById('win-message').style.display = 'block';
 }
+
+let score = 0;
+
+function updateScore() {
+  score++;
+  document.getElementById('score').innerText = score;
+}
+
+document.getElementById('generateNew').addEventListener('click', () => {
+  score = 0;
+  document.getElementById('score').innerText = score;
+});

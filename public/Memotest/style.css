@@ -43,7 +43,7 @@ body {
 .wrapper {
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-right: 35px;
+    padding-right: 41px;
     border-radius: 10px;
     background: #ECF3F5;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -174,3 +174,20 @@ body {
     max-width: 100%;
   }
   
+  #scoreContainer {
+    font-size: 130%;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Potta One', sans-serif; 
+    color: #6286B0;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 100px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+ }
