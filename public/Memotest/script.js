@@ -18,6 +18,7 @@ function flipCard({ target: clickedCard }) {
 function matchCards(img1, img2) {
   if (img1 === img2) {
     matched++;
+    updateScore();
     if (matched == 8) {
       setTimeout(() => {
         showWinMessage();
@@ -61,6 +62,7 @@ cards.forEach((card) => {
 
 function showWinMessage() {
   document.querySelector('.wrapper').style.display = 'none';
+  document.querySelector('#scoreContainer').style.display = 'none';
   document.getElementById('win-message').style.display = 'block';
 }
 

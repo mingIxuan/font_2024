@@ -24,6 +24,8 @@ h1{
     align-items: center;
     flex-direction: column;
     font-size: 300%;
+    margin-top: -1%;
+    margin-bottom: -1%;
 }
 
 body {
@@ -168,11 +170,13 @@ body {
 
 #win-message {
     text-align: center;
+
   }
   
-  #win-message img {
+#win-message img {
     max-width: 100%;
-  }
+    margin-top: -25%;
+}
   
   #scoreContainer {
     font-size: 130%;
