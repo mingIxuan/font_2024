@@ -7,20 +7,18 @@ body{
 
   #wordSearchContainer {
       display: grid;
-      grid-template-columns: repeat(11, 1fr);
-      grid-template-rows: repeat(9, 1fr);
-      gap: 0px;
-      max-width: 500px; 
+      grid-template-columns: repeat(10, 40px);
+      gap: 1;
   }
   
   #wordSearchContainer div {
-      width: 25px; 
-      height: 25px; 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #52a55b;
+      width: 40px; 
+      height: 40px; 
+      display: inline-block;
       cursor: pointer;
+      /*border: 1px solid #3f3f3f;*/
+      text-align: center;
+      z-index: 1;
   }
   
   #wordSearchContainer div.selected {
@@ -74,20 +72,33 @@ body{
     grid-template-rows: 2fr 100px;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-    justify-items: stretch;
     align-items: stretch;
     margin-top: 5%;
-    position: relative;
 }
 
-.sopa{
+.fondo{
     background-image: url('../Imagenes/sopa.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    height: 126%;
-    width: 70%;
-    top: 0;
-    left: 0;
-    margin-left: 3%;
+    height: 470px;
+    width: 460px;
+    z-index: -1;
+    position: absolute;
+    margin-left: 2%;
+    margin-top: -1%;
+}
+
+.sopa{
+
+    position: relative;
+    display: grid; 
+    margin-top: -3%;
+}
+
+.uh{
+    position: absolute;
+    margin-left: 60px;
+    margin-top: 35px;
+    
 }

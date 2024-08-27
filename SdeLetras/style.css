@@ -1,0 +1,127 @@
+body{
+    background-color: #cbdee7;
+    font-family: "Inter", sans-serif;
+  }
+
+  #wordSearchContainer {
+      display: grid;
+      grid-template-columns: repeat(10, 40px);
+      gap: 1;
+  }
+  
+  #wordSearchContainer div {
+      width: 40px; 
+      height: 40px; 
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+  }
+  
+  #wordSearchContainer div.selected {
+    background-color: #90ee90;
+    color: #FF439D;
+  }
+
+  .wordsList {
+      margin: 20px auto;
+      max-width: 90vw;
+      padding: 10px;
+      background-color: #AEF78B;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: block;
+      flex-wrap: wrap;
+  }
+  
+  .wordsList div {
+      padding: 8px 16px;
+      margin: 5px;
+      background-color: #7bd252;
+      border-radius: 4px;
+      font-size: 16px;
+      text-align: center;
+  }
+  
+  .wordsList div.found::after {
+      color: #6286B0; 
+  }
+  
+  .wordsList div.found {
+      background-color: #6286B0; 
+      text-decoration: line-through;
+  }
+
+  h1{
+    font-family: 'Potta One', sans-serif; 
+    color: #6286B0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 300%;
+    margin-top: -1%;
+    margin-bottom: -1%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 70%;
+    grid-template-rows: 2fr 100px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    align-items: stretch;
+    margin-top: 5%;
+}
+
+.fondo{
+    background-image: url('../Imagenes/sopa.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 470px;
+    width: 460px;
+    z-index: -1;
+    position: absolute;
+    margin-left: 2%;
+    margin-top: -1%;
+}
+
+.sopa{
+
+    position: relative;
+    display: grid; 
+    margin-top: -3%;
+}
+
+#win-message {
+    text-align: center;
+
+  }
+  
+#win-message img {
+    max-width: 100%;
+    margin-top: 5%;
+}
+
+.win{
+    z-index: -1;
+}
+
+.btn {
+    margin-top: 10%;
+    display: block;
+    cursor: pointer;
+    background-repeat: no-repeat;
+	background-position: center;
+    background-size: contain;
+    width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 40px 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
