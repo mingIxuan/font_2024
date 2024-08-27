@@ -1,5 +1,5 @@
 const words = ["CASA", "PERRO", "SOL", "MAR"]; 
-const gridSize = 10; 
+const gridSize =  { rows: 9, cols: 11 }; 
 let wordGrid;
 let currentSelection = []; 
 let wordsFound = []; 
@@ -19,24 +19,24 @@ function startNewGame() {
 }
 
 function generateEmptyGrid(size) {
-    return Array(size).fill(null).map(() => Array(size).fill('_'));
+  return Array(size.rows).fill(null).map(() => Array(size.cols).fill('_'));
 }
 
 function placeWordsInGrid(words, grid) {
     words.forEach(word => {
-        let placed = false;
-        while (!placed) {
-            const row = Math.floor(Math.random() * gridSize);
-            const col = Math.floor(Math.random() * (gridSize - word.length));
-            if (canPlaceWordAt(word, grid, row, col)) {
-                for (let i = 0; i < word.length; i++) {
-                    grid[row][col + i] = word[i];
-                }
-                placed = true;
-            }
+      let placed = false;
+      while (!placed) {
+        const row = Math.floor(Math.random() * gridSize.rows);
+        const col = Math.floor(Math.random() * (gridSize.cols - word.length));
+        if (canPlaceWordAt(word, grid, row, col)) {
+          for (let i = 0; i < word.length; i++) {
+            grid[row][col + i] = word[i];
+          }
+          placed = true;
         }
+      }
     });
-}
+  }
 
 function canPlaceWordAt(word, grid, row, col) {
     for (let i = 0; i < word.length; i++) {
@@ -49,13 +49,13 @@ function renderGrid(grid) {
     const container = document.getElementById('wordSearchContainer');
     container.innerHTML = '';
     grid.forEach((row, rowIndex) => {
-        row.forEach((cell, colIndex) => {
-            const cellElement = document.createElement('div');
-cellElement.textContent = cell === '_' ? String.fromCharCode(65 + Math.floor(Math.random() * 26)) : cell;
-    cellElement.dataset.index = rowIndex * gridSize + colIndex;
-            cellElement.addEventListener('click', () => selectCell(rowIndex, colIndex, cellElement));
-            container.appendChild(cellElement);
-        });
+      row.forEach((cell, colIndex) => {
+        const cellElement = document.createElement('div');
+        cellElement.textContent = cell === '_' ? String.fromCharCode(65 + Math.floor(Math.random() * 26)) : cell;
+        cellElement.dataset.index = rowIndex * gridSize.cols + colIndex;
+        cellElement.addEventListener('click', () => selectCell(rowIndex, colIndex, cellElement));
+        container.appendChild(cellElement);
+      });
     });
 }
 
@@ -71,7 +71,7 @@ function renderWordsList(words) {
 }
 
 function selectCell(rowIndex, colIndex, cellElement) {
-    const index = rowIndex * gridSize + colIndex;
+    const index = rowIndex * gridSize.cols + colIndex;
     if (currentSelection.includes(index)) return;
     cellElement.classList.add('selected');
     currentSelection.push(index);
