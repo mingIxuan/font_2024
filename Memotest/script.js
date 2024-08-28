@@ -64,6 +64,7 @@ function showWinMessage() {
   document.querySelector('.wrapper').style.display = 'none';
   document.querySelector('#scoreContainer').style.display = 'none';
   document.getElementById('win-message').style.display = 'block';
+  document.querySelector('h1').style.display = 'none';
 }
 
 let score = 0;
