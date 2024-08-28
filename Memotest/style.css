@@ -195,3 +195,23 @@ body {
     grid-row-gap: 20px;
     justify-items: stretch;
  }
+
+ .btn {
+    margin-top: 10%;
+    display: block;
+    cursor: pointer;
+    background-repeat: no-repeat;
+	background-position: center;
+    background-size: contain;
+    width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 40px 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: #A2DCA8;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}

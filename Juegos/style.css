@@ -35,3 +35,16 @@ header{
     background-size: contain;
     margin-top: -13px;
 }
+
+.imagenes-centradas {
+    text-align: center;
+  }
+  
+  .imagenes-centradas a {
+    display: inline-block;
+    margin: 0 10px; 
+  }
+  
+.imagenes-centradas img{
+    margin-top: 20%;
+}

@@ -20,7 +20,7 @@ body{
   }
   
   #wordSearchContainer div.selected {
-    background-color: #90ee90;
+    font-weight: 600;
     color: #FF439D;
   }
 
@@ -29,7 +29,7 @@ body{
       max-width: 90vw;
       padding: 10px;
       background-color: #AEF78B;
-      border-radius: 8px;
+      border-radius: 15px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       display: block;
       flex-wrap: wrap;
@@ -39,7 +39,7 @@ body{
       padding: 8px 16px;
       margin: 5px;
       background-color: #7bd252;
-      border-radius: 4px;
+      border-radius: 6px;
       font-size: 16px;
       text-align: center;
   }
@@ -49,7 +49,7 @@ body{
   }
   
   .wordsList div.found {
-      background-color: #6286B0; 
+      background-color: #60ab3d; 
       text-decoration: line-through;
   }
 
@@ -124,4 +124,6 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    background-color: #A2DCA8;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
