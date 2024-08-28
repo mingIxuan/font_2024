@@ -1,0 +1,78 @@
+body{
+    background-color: #CBDEE7;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ol{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    padding: 2%;
+}
+ol img{
+    height: 30px;
+}
+li:not(:last-child){
+    margin-right: 25%;
+}
+li:not(:last-child)::after{
+    display: inline-block;
+    margin-left: 25%;
+    width: 12px;
+    height: 12px;
+    background-color: #CBDEE7;
+    border-radius: 50%;
+}
+
+header{
+    background-image: url(../Imagenes/arriba.png);
+    background-size: contain;
+    margin-top: -13px;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+    height: 100px;
+    margin-top: 5%;
+}
+span{
+    font-family: "Poppins";
+    display: block;
+    margin: 0;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    font-weight: 500;
+}
+label{
+    display: flex;
+    align-self: center;
+}
+label:not(:last-child){
+    margin-bottom: 20px;
+}
+input,
+textarea{
+    display: block;
+    padding: 20px;
+    flex: 1;
+    background-color: #e5e5e5;
+    border: 2px solid #5b8f8f;
+    border-radius: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 130px;
+    margin-bottom: -2%;
+}
+button{
+    display: block;
+    text-align: center;
+    margin-left: 48%;
+}
