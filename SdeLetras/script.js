@@ -1,5 +1,5 @@
 //cambiar base de datos a array y conectar
-const words = ["CASA", "PERRO", "SOL", "MAR"]; 
+const words = ["RESPETO", "IGUALDAD", "DERECHOS", "FAMILIA", "SALUD"]; 
 const gridSize = 10; 
 let wordGrid;
 let currentSelection = []; 
