@@ -28,6 +28,9 @@ function matchCards(img1, img2) {
     cardTwo.removeEventListener('click', flipCard);
     cardOne = cardTwo = '';
     return (disableDeck = false);
+  }else{
+    score-= 50;
+  document.getElementById('score').innerText = score;
   }
   setTimeout(() => {
     cardOne.classList.add('shake');
@@ -38,6 +41,7 @@ function matchCards(img1, img2) {
     cardTwo.classList.remove('shake', 'flip');
     cardOne = cardTwo = '';
     disableDeck = false;
+
   }, 1200);
 }
 function shuffleCard() {
@@ -67,10 +71,10 @@ function showWinMessage() {
   document.querySelector('h1').style.display = 'none';
 }
 
-let score = 0;
+let score = 500;
 
 function updateScore() {
-  score++;
+  score+=100;
   document.getElementById('score').innerText = score;
 }
 
