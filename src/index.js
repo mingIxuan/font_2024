@@ -11,6 +11,8 @@ async function agarrarPalabras() {
   }
   
   agarrarPalabras();
+
+  
   
   const ImageList = () => {
   const [images, setImages] = useState([]);
